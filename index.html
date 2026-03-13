@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paul Wurschinger — Developer & Creator</title>
+  <meta name="description" content="Portfolio of Paul Wurschinger — iOS developer, builder, and creative technologist.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>P</text></svg>">
+</head>
+<body>
+
+  <div class="page-transition-overlay" id="transitionOverlay"></div>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__inner">
+      <div class="preloader__logo">
+        <span class="preloader__letter" style="--i:0">P</span>
+        <span class="preloader__letter" style="--i:1">W</span>
+        <span class="preloader__dot">.</span>
+      </div>
+      <div class="preloader__bar">
+        <div class="preloader__fill" id="preloaderFill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"></div>
+  </div>
+
+  <!-- Film Grain Overlay -->
+  <div class="grain"></div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav__logo magnetic" data-strength="20">PW<span class="nav__logo-dot">.</span></a>
+    <div class="nav__links">
+      <a href="#about" class="nav__link magnetic" data-strength="15"><span>About</span></a>
+      <a href="#work" class="nav__link magnetic" data-strength="15"><span>Work</span></a>
+      <a href="#skills" class="nav__link magnetic" data-strength="15"><span>Skills</span></a>
+      <a href="#contact" class="nav__link nav__link--cta magnetic" data-strength="15"><span>Get in Touch</span></a>
+    </div>
+    <button class="nav__toggle" aria-label="Toggle menu" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" class="mobile-menu__link">About</a>
+    <a href="#work" class="mobile-menu__link">Work</a>
+    <a href="#skills" class="mobile-menu__link">Skills</a>
+    <a href="#contact" class="mobile-menu__link">Get in Touch</a>
+  </div>
+
+  <!-- Section Indicators -->
+  <div class="section-dots" id="sectionDots">
+    <button class="section-dot active" data-section="hero" aria-label="Zu Hero scrollen"></button>
+    <button class="section-dot" data-section="about" aria-label="Zu About scrollen"></button>
+    <button class="section-dot" data-section="work" aria-label="Zu Work scrollen"></button>
+    <button class="section-dot" data-section="skills" aria-label="Zu Skills scrollen"></button>
+    <button class="section-dot" data-section="contact" aria-label="Zu Contact scrollen"></button>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="page hero" id="hero" data-section>
+    <!-- Particle Canvas -->
+    <canvas class="hero__particles" id="particleCanvas"></canvas>
+
+    <div class="hero__ambient">
+      <div class="blob blob--1"></div>
+      <div class="blob blob--2"></div>
+      <div class="blob blob--3"></div>
+    </div>
+    <div class="hero__grid-bg"></div>
+
+    <!-- Glow ring behind name -->
+    <div class="hero__glow-ring" id="heroGlow"></div>
+
+    <div class="hero__content" id="heroContent">
+      <div class="reveal-wrap"><div class="hero__badge reveal-up" data-delay="0.6">Developer & Creator</div></div>
+      <h1 class="hero__title" id="heroTitle">
+        <div class="text-line"><span class="reveal-up" data-delay="0.8" data-scramble="Paul">Paul</span></div>
+        <div class="text-line"><span class="reveal-up hero__name--accent" data-delay="0.95" data-scramble="Wurschinger">Wurschinger</span></div>
+      </h1>
+      <div class="reveal-wrap"><p class="hero__subtitle reveal-up" data-delay="1.1">
+        I craft polished mobile experiences and web applications<br>
+        with a focus on clean design and thoughtful interactions.
+      </p></div>
+      <div class="hero__actions reveal-up" data-delay="1.25">
+        <a href="#work" class="btn btn--primary magnetic" data-strength="10">
+          <span>View Projects</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
+        </a>
+        <a href="#contact" class="btn btn--ghost magnetic" data-strength="10">
+          <span>Contact Me</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__footer">
+      <div class="hero__scroll-hint">
+        <span>Scroll to explore</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+      <div class="hero__availability">
+        <span class="pulse-dot"></span>
+        Available for work
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="page about" id="about" data-section>
+    <div class="page__ambient">
+      <div class="blob blob--4"></div>
+    </div>
+    <div class="container">
+      <div class="page__header">
+        <span class="page__number reveal-up">01</span>
+        <h2 class="page__title">
+          <div class="text-line"><span class="reveal-up">About</span></div>
+          <div class="text-line"><span class="reveal-up">Me</span></div>
+        </h2>
+      </div>
+
+      <div class="about__layout">
+        <div class="about__text">
+          <p class="about__paragraph reveal-up">
+            I'm a developer and builder based in Austria, passionate about creating
+            digital products that feel intuitive and look exceptional.
+          </p>
+          <p class="about__paragraph reveal-up">
+            My work spans iOS apps, web applications, and creative AI-powered tools.
+            I believe great software is invisible — it gets out of the way and lets
+            people accomplish what they came to do.
+          </p>
+          <p class="about__paragraph reveal-up">
+            Every pixel, every interaction, every transition should feel intentional.
+            When I'm not coding, you'll find me exploring new technologies,
+            researching product ideas, and turning concepts into reality.
+          </p>
+        </div>
+
+        <div class="about__metrics">
+          <div class="metric reveal-up">
+            <div class="metric__value">
+              <span class="metric__number" data-count="10">0</span>
+              <span class="metric__suffix">+</span>
+            </div>
+            <div class="metric__line"></div>
+            <span class="metric__label">Projects Shipped</span>
+          </div>
+          <div class="metric reveal-up">
+            <div class="metric__value">
+              <span class="metric__number" data-count="5">0</span>
+              <span class="metric__suffix">+</span>
+            </div>
+            <div class="metric__line"></div>
+            <span class="metric__label">Core Technologies</span>
+          </div>
+          <div class="metric reveal-up">
+            <div class="metric__value">
+              <span class="metric__number" data-count="3">0</span>
+              <span class="metric__suffix">+</span>
+            </div>
+            <div class="metric__line"></div>
+            <span class="metric__label">Years Building</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WORK — Horizontal Showcase ===== -->
+  <section class="page work" id="work" data-section>
+    <div class="container">
+      <div class="page__header">
+        <span class="page__number reveal-up">02</span>
+        <h2 class="page__title">
+          <div class="text-line"><span class="reveal-up">Selected</span></div>
+          <div class="text-line"><span class="reveal-up">Work</span></div>
+        </h2>
+      </div>
+    </div>
+
+    <!-- Horizontal Scroll Track -->
+    <div class="work__track-wrap">
+      <div class="work__track" id="workTrack">
+
+        <article class="work__card reveal-up" data-color="#1a1a2e">
+          <div class="work__card-visual" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);">
+            <div class="work__card-icon">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18.5a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13Z"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            </div>
+            <div class="work__card-number">01</div>
+          </div>
+          <div class="work__card-info">
+            <div class="work__card-tags">
+              <span class="tag">SwiftUI</span>
+              <span class="tag">iOS</span>
+              <span class="tag">Vision</span>
+            </div>
+            <h3 class="work__card-title">CleanLens</h3>
+            <p class="work__card-desc">AI-powered photo scanning and analysis app with clean, intuitive design and real-time processing.</p>
+            <a href="#" class="work__card-link magnetic" data-strength="8">
+              <span>Explore</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="work__card reveal-up" data-color="#0f3460">
+          <div class="work__card-visual" style="background: linear-gradient(135deg, #0f3460 0%, #533483 50%, #2d1b69 100%);">
+            <div class="work__card-icon">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div class="work__card-number">02</div>
+          </div>
+          <div class="work__card-info">
+            <div class="work__card-tags">
+              <span class="tag">React Native</span>
+              <span class="tag">AI</span>
+            </div>
+            <h3 class="work__card-title">DreamDecode</h3>
+            <p class="work__card-desc">AI dream journaling and interpretation with beautiful, immersive visualizations and insights.</p>
+            <a href="#" class="work__card-link magnetic" data-strength="8">
+              <span>Explore</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="work__card reveal-up" data-color="#162447">
+          <div class="work__card-visual" style="background: linear-gradient(135deg, #1b1b2f 0%, #162447 50%, #1a1a3e 100%);">
+            <div class="work__card-icon">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+            </div>
+            <div class="work__card-number">03</div>
+          </div>
+          <div class="work__card-info">
+            <div class="work__card-tags">
+              <span class="tag">Next.js</span>
+              <span class="tag">Finance</span>
+            </div>
+            <h3 class="work__card-title">Fincept Terminal</h3>
+            <p class="work__card-desc">Financial data terminal and analytics platform with real-time market insights and live feeds.</p>
+            <a href="#" class="work__card-link magnetic" data-strength="8">
+              <span>Explore</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="work__card reveal-up" data-color="#2d1b69">
+          <div class="work__card-visual" style="background: linear-gradient(135deg, #2d1b69 0%, #11998e 50%, #0f3460 100%);">
+            <div class="work__card-icon">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg>
+            </div>
+            <div class="work__card-number">04</div>
+          </div>
+          <div class="work__card-info">
+            <div class="work__card-tags">
+              <span class="tag">React</span>
+              <span class="tag">AI</span>
+              <span class="tag">Fashion</span>
+            </div>
+            <h3 class="work__card-title">RoastMyFit</h3>
+            <p class="work__card-desc">AI-powered outfit analysis that roasts your fashion choices with brutal honesty and humor.</p>
+            <a href="#" class="work__card-link magnetic" data-strength="8">
+              <span>Explore</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="work__card reveal-up" data-color="#0c0c1d">
+          <div class="work__card-visual" style="background: linear-gradient(135deg, #0c0c1d 0%, #1a1a3e 50%, #16213e 100%);">
+            <div class="work__card-icon">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+            </div>
+            <div class="work__card-number">05</div>
+          </div>
+          <div class="work__card-info">
+            <div class="work__card-tags">
+              <span class="tag">iOS</span>
+              <span class="tag">SwiftUI</span>
+            </div>
+            <h3 class="work__card-title">SkinScan Daily</h3>
+            <p class="work__card-desc">Daily skin health tracking with AI-powered analysis and personalized care routines.</p>
+            <a href="#" class="work__card-link magnetic" data-strength="8">
+              <span>Explore</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="work__card reveal-up" data-color="#1a0a2e">
+          <div class="work__card-visual" style="background: linear-gradient(135deg, #1a0a2e 0%, #3a1c71 50%, #533483 100%);">
+            <div class="work__card-icon">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+            </div>
+            <div class="work__card-number">06</div>
+          </div>
+          <div class="work__card-info">
+            <div class="work__card-tags">
+              <span class="tag">Next.js</span>
+              <span class="tag">Web App</span>
+            </div>
+            <h3 class="work__card-title">FlexFlow</h3>
+            <p class="work__card-desc">Productivity and workflow management tool with flexible layouts and smart automations.</p>
+            <a href="#" class="work__card-link magnetic" data-strength="8">
+              <span>Explore</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- Scroll hint for horizontal -->
+    <div class="work__scroll-hint reveal-up">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      <span>Drag or scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="page skills" id="skills" data-section>
+    <div class="page__ambient">
+      <div class="blob blob--5"></div>
+    </div>
+    <div class="container">
+      <div class="page__header">
+        <span class="page__number reveal-up">03</span>
+        <h2 class="page__title">
+          <div class="text-line"><span class="reveal-up">Tech</span></div>
+          <div class="text-line"><span class="reveal-up">Stack</span></div>
+        </h2>
+      </div>
+
+      <div class="skills__orbit-layout">
+        <div class="skills__groups">
+          <div class="skill-block reveal-up">
+            <div class="skill-block__header">
+              <div class="skill-block__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="13" x="2" y="7" rx="1"/><rect width="7" height="17" x="9" y="3" rx="1"/><rect width="3" height="9" x="19" y="11" rx="1"/></svg>
+              </div>
+              <h3 class="skill-block__title">Mobile</h3>
+            </div>
+            <div class="skill-block__items">
+              <span class="skill-pill" data-level="95">SwiftUI</span>
+              <span class="skill-pill" data-level="85">UIKit</span>
+              <span class="skill-pill" data-level="80">React Native</span>
+              <span class="skill-pill" data-level="75">Expo</span>
+            </div>
+          </div>
+
+          <div class="skill-block reveal-up">
+            <div class="skill-block__header">
+              <div class="skill-block__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+              </div>
+              <h3 class="skill-block__title">Frontend</h3>
+            </div>
+            <div class="skill-block__items">
+              <span class="skill-pill" data-level="90">React</span>
+              <span class="skill-pill" data-level="90">Next.js</span>
+              <span class="skill-pill" data-level="85">TypeScript</span>
+              <span class="skill-pill" data-level="95">Tailwind CSS</span>
+            </div>
+          </div>
+
+          <div class="skill-block reveal-up">
+            <div class="skill-block__header">
+              <div class="skill-block__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>
+              </div>
+              <h3 class="skill-block__title">Backend</h3>
+            </div>
+            <div class="skill-block__items">
+              <span class="skill-pill" data-level="80">Node.js</span>
+              <span class="skill-pill" data-level="75">Python</span>
+              <span class="skill-pill" data-level="80">Express</span>
+              <span class="skill-pill" data-level="85">REST APIs</span>
+            </div>
+          </div>
+
+          <div class="skill-block reveal-up">
+            <div class="skill-block__header">
+              <div class="skill-block__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4c0 2 2 3 2 6H6a4 4 0 0 0-4 4c0 2 2 3 6 3h8c4 0 6-1 6-3a4 4 0 0 0-4-4h-4c0-3 2-4 2-6a4 4 0 0 0-4-4Z"/></svg>
+              </div>
+              <h3 class="skill-block__title">Tools & AI</h3>
+            </div>
+            <div class="skill-block__items">
+              <span class="skill-pill" data-level="90">Git</span>
+              <span class="skill-pill" data-level="85">Claude API</span>
+              <span class="skill-pill" data-level="80">OpenAI</span>
+              <span class="skill-pill" data-level="85">Vercel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="page contact" id="contact" data-section>
+    <div class="page__ambient">
+      <div class="blob blob--6"></div>
+      <div class="blob blob--7"></div>
+    </div>
+    <div class="container">
+      <div class="contact__inner">
+        <span class="page__number reveal-up">04</span>
+        <h2 class="contact__title">
+          <div class="text-line"><span class="reveal-up">Let's build</span></div>
+          <div class="text-line"><span class="reveal-up">something</span></div>
+          <div class="text-line"><span class="reveal-up contact__title--accent">together.</span></div>
+        </h2>
+        <p class="contact__desc reveal-up">
+          Have a project idea, a collaboration in mind, or just want to connect?
+          I'd love to hear from you.
+        </p>
+        <div class="contact__cta reveal-up">
+          <a href="mailto:paul@example.com" class="btn btn--primary btn--xl magnetic" data-strength="12">
+            <span>Say Hello</span>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+        </div>
+        <div class="contact__socials reveal-up">
+          <a href="https://github.com/paulwurschinger" class="social-link magnetic" data-strength="20" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <span>GitHub</span>
+          </a>
+          <a href="https://linkedin.com/in/paulwurschinger" class="social-link magnetic" data-strength="20" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://twitter.com/paulwurschinger" class="social-link magnetic" data-strength="20" target="_blank" rel="noopener noreferrer" aria-label="X">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <span>X / Twitter</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p class="footer__text">&copy; 2026 Paul Wurschinger</p>
+        <p class="footer__sub">Designed & built with obsessive attention to detail.</p>
+      </div>
+    </footer>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
