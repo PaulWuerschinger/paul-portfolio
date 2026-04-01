@@ -6,7 +6,7 @@ import { TextFlippingBoard } from "@/components/ui/text-flipping-board";
 import { ChevronDown } from "lucide-react";
 
 const MESSAGES: string[] = [
-  "PAUL WURSCHINGER\nCREATIVE DEVELOPER\nAUSTRIA",
+  "PAUL WURSCHINGER\nCREATIVE DEVELOPER\nGERMANY",
   "I BUILD APPS\nTHAT FEEL ALIVE",
   "REACT + NEXT.JS\nSWIFT + SWIFTUI\nTHREE.JS + GSAP",
   "DESIGN MEETS CODE\nPIXEL PERFECT\nALWAYS",
@@ -62,7 +62,7 @@ export function HeroSection() {
         transition={{ duration: 0.8, delay: 1.2 }}
         className="mt-10 text-sm md:text-base text-[var(--muted-foreground)] tracking-[0.15em] uppercase font-light"
       >
-        Creative Developer &middot; Austria
+        Creative Developer &middot; Germany
       </motion.p>
 
       {/* Scroll indicator */}

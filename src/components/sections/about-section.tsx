@@ -100,7 +100,7 @@ export function AboutSection() {
           {/* Left: Bio */}
           <div className="space-y-6">
             <p className="text-lg text-[var(--muted-foreground)] leading-relaxed">
-              I&apos;m Paul — a creative developer based in Austria who thrives at the
+              I&apos;m Paul — a creative developer based in Germany who thrives at the
               intersection of design and engineering. I build immersive web
               experiences, native mobile apps, and everything in between.
             </p>
