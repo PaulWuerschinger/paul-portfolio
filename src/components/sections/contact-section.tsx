@@ -129,7 +129,7 @@ export function ContactSection() {
             <div>
               <p className="text-white font-semibold text-lg">Are you a Creator?</p>
               <p className="text-[var(--muted-foreground)] text-sm">
-                Join our affiliate program and earn up to 30% recurring commission promoting our apps.
+                Join our affiliate program and earn recurring commission promoting our apps — rate negotiable.
               </p>
             </div>
             <a

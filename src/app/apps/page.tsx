@@ -180,7 +180,7 @@ export default function AppsPage() {
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
-          Become an Affiliate — Earn up to 30% recurring
+          Become an Affiliate — Recurring Commission
         </motion.button>
 
         {/* Filter bar */}
@@ -328,31 +328,39 @@ export default function AppsPage() {
                 Join the Creator Program
               </h2>
               <p className="text-[var(--muted-foreground)] text-sm">
-                Earn up to 30% recurring commission. We&apos;ll set you up with your personal referral link once the app launches.
+                Earn recurring commission — rate is negotiable based on your audience and content output. We&apos;ll set you up with your personal referral link once the app launches.
               </p>
             </div>
 
-            {/* Tier breakdown */}
-            <div className="mb-6 space-y-2">
-              {[
-                { tier: "Gold", rate: "30%", req: "4+ videos + 2 stories/mo + link in bio", color: "#f59e0b" },
-                { tier: "Silver", rate: "20%", req: "2+ videos + 1 story/mo + link in bio", color: "#94a3b8" },
-                { tier: "Bronze", rate: "10%", req: "1 video/mo + link in bio", color: "#b45309" },
-              ].map((t) => (
-                <div
-                  key={t.tier}
-                  className="flex items-center justify-between py-3 px-4 rounded-xl border border-white/[0.04] bg-white/[0.01]"
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="text-sm font-semibold" style={{ color: t.color }}>{t.tier}</span>
-                    <span className="text-xs text-[var(--muted-foreground)]">{t.req}</span>
-                  </div>
-                  <span className="text-sm font-mono text-[var(--accent)]">{t.rate}</span>
+            {/* How it works */}
+            <div className="mb-6 space-y-3">
+              <div className="py-3 px-4 rounded-xl border border-white/[0.04] bg-white/[0.01]">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-white font-medium">Commission Rate</span>
+                  <span className="text-sm font-mono text-[var(--accent)]">Negotiable</span>
                 </div>
-              ))}
+              </div>
+              <div className="py-3 px-4 rounded-xl border border-white/[0.04] bg-white/[0.01]">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-white font-medium">Type</span>
+                  <span className="text-sm font-mono text-[var(--accent)]">Recurring monthly</span>
+                </div>
+              </div>
+              <div className="py-3 px-4 rounded-xl border border-white/[0.04] bg-white/[0.01]">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-white font-medium">Month 1</span>
+                  <span className="text-sm font-mono text-[var(--muted-foreground)]">Trial — show us what you got</span>
+                </div>
+              </div>
+              <div className="py-3 px-4 rounded-xl border border-white/[0.04] bg-white/[0.01]">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-white font-medium">Month 2+</span>
+                  <span className="text-sm font-mono text-[var(--muted-foreground)]">Rate scales with your performance</span>
+                </div>
+              </div>
             </div>
             <p className="text-xs text-[var(--muted-foreground)] mb-8">
-              More content = more sign-ups through your link = more you earn. Commission is recurring — you get paid every month the user stays subscribed.
+              More content = more sign-ups = higher commission. Rate is recurring — you earn every month the user stays subscribed. We&apos;ll discuss the exact rate based on your audience and content.
             </p>
 
             {submitted ? (
