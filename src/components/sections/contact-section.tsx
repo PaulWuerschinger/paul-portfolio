@@ -6,15 +6,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Mail, Github, Linkedin, Twitter, ArrowUpRight } from "lucide-react";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 import BlurText from "@/components/ui/blur-text";
-import StarBorder from "@/components/ui/star-border";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const socials = [
-  { icon: Github, label: "GitHub", href: "#" },
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
-  { icon: Twitter, label: "Twitter", href: "#" },
-  { icon: Mail, label: "Email", href: "mailto:hello@paulw.dev" },
+  { icon: Github, label: "GitHub", href: "https://github.com/PaulWuerschinger" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/paulwuerschinger" },
+  { icon: Twitter, label: "Twitter", href: "https://x.com/paulwuerschinger" },
+  { icon: Mail, label: "Email", href: "mailto:paulwuerschinger@gmail.com" },
 ];
 
 export function ContactSection() {
@@ -90,23 +89,18 @@ export function ContactSection() {
           </p>
 
           <div className="contact-line flex flex-wrap gap-4 mt-8">
-            <ShimmerButton
-              shimmerColor="rgba(96, 119, 221, 0.5)"
-              background="rgba(96, 119, 221, 0.1)"
-              className="text-base font-medium"
-            >
-              <span className="flex items-center gap-2">
-                <Mail size={18} />
-                Get in Touch
-              </span>
-            </ShimmerButton>
-
-            <StarBorder as="a" color="rgba(225, 123, 142, 0.8)">
-              <span className="flex items-center gap-2">
-                View Resume
-                <ArrowUpRight size={16} />
-              </span>
-            </StarBorder>
+            <a href="mailto:paulwuerschinger@gmail.com">
+              <ShimmerButton
+                shimmerColor="rgba(96, 119, 221, 0.5)"
+                background="rgba(96, 119, 221, 0.1)"
+                className="text-base font-medium"
+              >
+                <span className="flex items-center gap-2">
+                  <Mail size={18} />
+                  Get in Touch
+                </span>
+              </ShimmerButton>
+            </a>
           </div>
         </div>
 
@@ -116,6 +110,8 @@ export function ContactSection() {
             <a
               key={social.label}
               href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label={social.label}
               className="social-link group p-4 rounded-full border border-white/[0.06] bg-white/[0.02] hover:border-[var(--primary)]/30 hover:bg-[var(--primary)]/5 transition-all duration-300"
             >
@@ -125,6 +121,25 @@ export function ContactSection() {
               />
             </a>
           ))}
+        </div>
+
+        {/* Creator CTA */}
+        <div className="contact-line mt-16 p-6 rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+              <p className="text-white font-semibold text-lg">Are you a Creator?</p>
+              <p className="text-[var(--muted-foreground)] text-sm">
+                Join our affiliate program and earn up to 30% recurring commission promoting our apps.
+              </p>
+            </div>
+            <a
+              href="/apps"
+              className="shrink-0 px-6 py-3 rounded-full text-sm font-semibold bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white hover:opacity-90 transition-opacity flex items-center gap-2"
+            >
+              Creator Program
+              <ArrowUpRight size={16} />
+            </a>
+          </div>
         </div>
 
         {/* Separator */}
