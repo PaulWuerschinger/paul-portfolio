@@ -90,7 +90,7 @@ const apps: App[] = [
 const categories = ["All", ...Array.from(new Set(apps.map((a) => a.category)))];
 
 // SETUP: Replace with your deployed Google Apps Script URL
-const WEBHOOK_URL = process.env.NEXT_PUBLIC_CREATOR_WEBHOOK_URL || "";
+const WEBHOOK_URL = process.env.NEXT_PUBLIC_CREATOR_WEBHOOK_URL || "https://script.google.com/macros/s/AKfycbwk4oUQc9zaJ4maznSV6RS0EGwPH83OcUJrxjuJB_j0r7R8HyVRWlO__X0Q4jlVpBEpGQ/exec";
 
 export default function AppsPage() {
   const [activeCategory, setActiveCategory] = useState("All");
