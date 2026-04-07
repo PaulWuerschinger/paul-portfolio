@@ -97,7 +97,7 @@ export default function AppsPage() {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [formOpen, setFormOpen] = useState(false);
   const [selectedApps, setSelectedApps] = useState<string[]>([]);
-  const [formData, setFormData] = useState({ name: "", email: "", tiktok: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", email: "", tiktok: "", followers: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
@@ -126,6 +126,7 @@ export default function AppsPage() {
             name: formData.name,
             email: formData.email,
             tiktok: formData.tiktok.replace("@", ""),
+            followers: formData.followers,
             apps: selectedApps.map((id) => apps.find((a) => a.id === id)?.name || id),
             message: formData.message,
           }),
@@ -450,18 +451,33 @@ export default function AppsPage() {
                   </div>
                 </div>
 
-                <div>
-                  <label className="text-xs font-mono text-[var(--muted-foreground)] mb-1.5 block">
-                    TikTok Handle
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.tiktok}
-                    onChange={(e) => setFormData({ ...formData, tiktok: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.06] text-white text-sm focus:outline-none focus:border-[var(--primary)] transition-colors"
-                    placeholder="@username"
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-xs font-mono text-[var(--muted-foreground)] mb-1.5 block">
+                      TikTok Handle
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.tiktok}
+                      onChange={(e) => setFormData({ ...formData, tiktok: e.target.value })}
+                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.06] text-white text-sm focus:outline-none focus:border-[var(--primary)] transition-colors"
+                      placeholder="@username"
+                    />
+                  </div>
+                  <div>
+                    <label className="text-xs font-mono text-[var(--muted-foreground)] mb-1.5 block">
+                      Follower Count
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.followers}
+                      onChange={(e) => setFormData({ ...formData, followers: e.target.value })}
+                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.06] text-white text-sm focus:outline-none focus:border-[var(--primary)] transition-colors"
+                      placeholder="e.g. 15,000"
+                    />
+                  </div>
                 </div>
 
                 <div>
